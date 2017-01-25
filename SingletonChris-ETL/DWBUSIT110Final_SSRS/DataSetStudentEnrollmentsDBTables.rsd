@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DataSourceDWBUSIT110FinalDB</DataSourceReference>
+      <CommandText>SELECT DimClasses.ClassName, DimClasses.CurrentClassPrice, DimDates.FullDate, FactEnrollments.ActualEnrollmentPrice, DimStudents.StudentFullName, 
+                  DimStudents.StudentEmail
+FROM     DimClasses INNER JOIN
+                  FactEnrollments ON DimClasses.ClassKey = FactEnrollments.ClassKey INNER JOIN
+                  DimStudents ON FactEnrollments.StudentKey = DimStudents.StudentKey INNER JOIN
+                  DimDates ON FactEnrollments.EnrollmentDateKey = DimDates.DateKey</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ClassName">
+        <DataField>ClassName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CurrentClassPrice">
+        <DataField>CurrentClassPrice</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="FullDate">
+        <DataField>FullDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="ActualEnrollmentPrice">
+        <DataField>ActualEnrollmentPrice</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="StudentFullName">
+        <DataField>StudentFullName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="StudentEmail">
+        <DataField>StudentEmail</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

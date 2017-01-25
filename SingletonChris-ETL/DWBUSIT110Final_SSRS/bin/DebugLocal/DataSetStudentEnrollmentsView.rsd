@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DataSourceDWBUSIT110FinalDB</DataSourceReference>
+      <CommandText>SELECT StudentFullName, ClassName, FullDate, SUM(CurrentClassPrice) AS TotalCurrentClassPrice, SUM(ActualEnrollmentPrice) AS TotalActualPrice
+FROM     StudentEnrollments
+GROUP BY StudentFullName, ClassName, FullDate</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="StudentFullName">
+        <DataField>StudentFullName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ClassName">
+        <DataField>ClassName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="FullDate">
+        <DataField>FullDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TotalCurrentClassPrice">
+        <DataField>TotalCurrentClassPrice</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="TotalActualPrice">
+        <DataField>TotalActualPrice</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
